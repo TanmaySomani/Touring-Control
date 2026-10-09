@@ -1,0 +1,49 @@
+id,route,tour,airline,departure,releaseDate,seats,booked,forecastPax,forecastLow,forecastHigh,unitCost,sellPrice,releaseFee,maxRelease,minGroup,budgetPax,owner,region,origin,status
+TC-01001,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2026-11-18,2026-10-04,28,25,28,25,28,690,990,83,14,10,24,S. Chen,Oceania,Brisbane,Simulated contract
+TC-01002,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2026-12-06,2026-10-22,32,23,29,23,32,690,990,83,16,10,27,S. Chen,Oceania,Brisbane,Simulated contract
+TC-01003,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2026-12-24,2026-11-09,36,24,34,27,36,690,990,83,18,10,31,S. Chen,Oceania,Brisbane,Simulated contract
+TC-01004,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2027-01-11,2026-11-27,40,22,36,29,40,690,990,83,20,10,34,S. Chen,Oceania,Brisbane,Simulated contract
+TC-01005,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2027-01-29,2026-12-15,28,14,27,22,28,690,990,83,14,10,24,S. Chen,Oceania,Brisbane,Simulated contract
+TC-01006,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2027-02-16,2027-01-02,32,13,29,23,32,690,990,83,16,10,27,S. Chen,Oceania,Brisbane,Simulated contract
+TC-01007,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2027-03-06,2027-01-20,36,13,34,27,36,690,990,83,18,10,31,S. Chen,Oceania,Brisbane,Simulated contract
+TC-01008,BNE-AKL,Northern New Zealand Explorer,Air New Zealand,2027-03-24,2027-02-07,40,11,35,28,40,690,990,83,20,10,34,S. Chen,Oceania,Brisbane,Simulated contract
+TC-02001,SYD-TYO,Japan Discovery,Japan Airlines,2026-11-21,2026-10-07,32,27,31,27,32,1420,1870,170,16,10,27,J. Patel,Asia,Sydney,Simulated contract
+TC-02002,SYD-TYO,Japan Discovery,Japan Airlines,2026-12-09,2026-10-25,36,30,36,30,36,1420,1870,170,18,10,31,J. Patel,Asia,Sydney,Simulated contract
+TC-02003,SYD-TYO,Japan Discovery,Japan Airlines,2026-12-27,2026-11-12,40,27,39,31,40,1420,1870,170,20,10,34,J. Patel,Asia,Sydney,Simulated contract
+TC-02004,SYD-TYO,Japan Discovery,Japan Airlines,2027-01-14,2026-11-30,28,18,28,22,28,1420,1870,170,14,10,24,J. Patel,Asia,Sydney,Simulated contract
+TC-02005,SYD-TYO,Japan Discovery,Japan Airlines,2027-02-01,2026-12-18,32,16,32,26,32,1420,1870,170,16,10,27,J. Patel,Asia,Sydney,Simulated contract
+TC-02006,SYD-TYO,Japan Discovery,Japan Airlines,2027-02-19,2027-01-05,36,16,36,29,36,1420,1870,170,18,10,31,J. Patel,Asia,Sydney,Simulated contract
+TC-02007,SYD-TYO,Japan Discovery,Japan Airlines,2027-03-09,2027-01-23,40,14,38,30,40,1420,1870,170,20,10,34,J. Patel,Asia,Sydney,Simulated contract
+TC-02008,SYD-TYO,Japan Discovery,Japan Airlines,2027-03-27,2027-02-10,28,9,28,22,28,1420,1870,170,14,10,24,J. Patel,Asia,Sydney,Simulated contract
+TC-03001,BNE-TYO,Japan Autumn Trails,Qantas,2026-11-24,2026-10-10,36,17,20,17,24,1490,1990,179,18,10,31,A. Wilson,Asia,Brisbane,Simulated contract
+TC-03002,BNE-TYO,Japan Autumn Trails,Qantas,2026-12-12,2026-10-28,40,20,26,21,31,1490,1990,179,20,10,34,A. Wilson,Asia,Brisbane,Simulated contract
+TC-03003,BNE-TYO,Japan Autumn Trails,Qantas,2026-12-30,2026-11-15,28,11,16,13,19,1490,1990,179,14,10,24,A. Wilson,Asia,Brisbane,Simulated contract
+TC-03004,BNE-TYO,Japan Autumn Trails,Qantas,2027-01-17,2026-12-03,32,11,19,15,23,1490,1990,179,16,10,27,A. Wilson,Asia,Brisbane,Simulated contract
+TC-03005,BNE-TYO,Japan Autumn Trails,Qantas,2027-02-04,2026-12-21,36,11,22,18,26,1490,1990,179,18,10,31,A. Wilson,Asia,Brisbane,Simulated contract
+TC-03006,BNE-TYO,Japan Autumn Trails,Qantas,2027-02-22,2027-01-08,40,10,24,19,29,1490,1990,179,20,10,34,A. Wilson,Asia,Brisbane,Simulated contract
+TC-03007,BNE-TYO,Japan Autumn Trails,Qantas,2027-03-12,2027-01-26,28,6,17,14,20,1490,1990,179,14,10,24,A. Wilson,Asia,Brisbane,Simulated contract
+TC-03008,BNE-TYO,Japan Autumn Trails,Qantas,2027-03-30,2027-02-13,32,5,17,14,20,1490,1990,179,16,10,27,A. Wilson,Asia,Brisbane,Simulated contract
+TC-04001,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2026-11-27,2026-10-13,40,24,28,24,34,920,1290,110,20,10,34,S. Chen,Asia,Melbourne,Simulated contract
+TC-04002,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2026-12-15,2026-10-31,28,16,21,17,25,920,1290,110,14,10,24,S. Chen,Asia,Melbourne,Simulated contract
+TC-04003,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2027-01-02,2026-11-18,32,16,24,19,29,920,1290,110,16,10,27,S. Chen,Asia,Melbourne,Simulated contract
+TC-04004,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2027-01-20,2026-12-06,36,16,28,22,34,920,1290,110,18,10,31,S. Chen,Asia,Melbourne,Simulated contract
+TC-04005,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2027-02-07,2026-12-24,40,13,27,22,32,920,1290,110,20,10,34,S. Chen,Asia,Melbourne,Simulated contract
+TC-04006,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2027-02-25,2027-01-11,28,8,19,15,23,920,1290,110,14,10,24,S. Chen,Asia,Melbourne,Simulated contract
+TC-04007,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2027-03-15,2027-01-29,32,7,20,16,24,920,1290,110,16,10,27,S. Chen,Asia,Melbourne,Simulated contract
+TC-04008,MEL-SGN,Vietnam Heritage Journey,Vietnam Airlines,2027-04-02,2027-02-16,36,7,25,20,30,920,1290,110,18,10,31,S. Chen,Asia,Melbourne,Simulated contract
+TC-05001,SYD-SEL,Colours of South Korea,Korean Air,2026-11-30,2026-10-16,28,21,25,21,28,1280,1690,154,14,10,24,J. Patel,Asia,Sydney,Simulated contract
+TC-05002,SYD-SEL,Colours of South Korea,Korean Air,2026-12-18,2026-11-03,32,24,32,26,32,1280,1690,154,16,10,27,J. Patel,Asia,Sydney,Simulated contract
+TC-05003,SYD-SEL,Colours of South Korea,Korean Air,2027-01-05,2026-11-21,36,23,35,28,36,1280,1690,154,18,10,31,J. Patel,Asia,Sydney,Simulated contract
+TC-05004,SYD-SEL,Colours of South Korea,Korean Air,2027-01-23,2026-12-09,40,21,38,30,40,1280,1690,154,20,10,34,J. Patel,Asia,Sydney,Simulated contract
+TC-05005,SYD-SEL,Colours of South Korea,Korean Air,2027-02-10,2026-12-27,28,12,26,21,28,1280,1690,154,14,10,24,J. Patel,Asia,Sydney,Simulated contract
+TC-05006,SYD-SEL,Colours of South Korea,Korean Air,2027-02-28,2027-01-14,32,11,28,22,32,1280,1690,154,16,10,27,J. Patel,Asia,Sydney,Simulated contract
+TC-05007,SYD-SEL,Colours of South Korea,Korean Air,2027-03-18,2027-02-01,36,12,36,29,36,1280,1690,154,18,10,31,J. Patel,Asia,Sydney,Simulated contract
+TC-05008,SYD-SEL,Colours of South Korea,Korean Air,2027-04-05,2027-02-19,40,10,37,30,40,1280,1690,154,20,10,34,J. Patel,Asia,Sydney,Simulated contract
+TC-06001,MEL-SIN,Singapore & Beyond,Singapore Airlines,2026-12-03,2026-10-19,32,23,28,23,32,1050,1420,126,16,10,27,A. Wilson,Asia,Melbourne,Simulated contract
+TC-06002,MEL-SIN,Singapore & Beyond,Singapore Airlines,2026-12-21,2026-11-06,36,19,26,21,31,1050,1420,126,18,10,31,A. Wilson,Asia,Melbourne,Simulated contract
+TC-06003,MEL-SIN,Singapore & Beyond,Singapore Airlines,2027-01-08,2026-11-24,40,20,32,26,38,1050,1420,126,20,10,34,A. Wilson,Asia,Melbourne,Simulated contract
+TC-06004,MEL-SIN,Singapore & Beyond,Singapore Airlines,2027-01-26,2026-12-12,28,11,20,16,24,1050,1420,126,14,10,24,A. Wilson,Asia,Melbourne,Simulated contract
+TC-06005,MEL-SIN,Singapore & Beyond,Singapore Airlines,2027-02-13,2026-12-30,32,12,26,21,31,1050,1420,126,16,10,27,A. Wilson,Asia,Melbourne,Simulated contract
+TC-06006,MEL-SIN,Singapore & Beyond,Singapore Airlines,2027-03-03,2027-01-17,36,11,28,22,34,1050,1420,126,18,10,31,A. Wilson,Asia,Melbourne,Simulated contract
+TC-06007,MEL-SIN,Singapore & Beyond,Singapore Airlines,2027-03-21,2027-02-04,40,12,37,30,40,1050,1420,126,20,10,34,A. Wilson,Asia,Melbourne,Simulated contract
+TC-06008,MEL-SIN,Singapore & Beyond,Singapore Airlines,2027-04-08,2027-02-22,28,6,23,18,28,1050,1420,126,14,10,24,A. Wilson,Asia,Melbourne,Simulated contract
