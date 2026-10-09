@@ -4,6 +4,8 @@
 
 A commercial flight-inventory decision-support project built for an Inventory Coordinator application. It combines official Australian aviation statistics with an explicitly simulated touring operation.
 
+![Public Streamlit dashboard](docs/assets/streamlit-dashboard.png)
+
 **Business question:** Which contracted seats should a touring operator retain, release or escalate before supplier deadlines, and what is the commercial effect?
 
 ## What you can demonstrate
