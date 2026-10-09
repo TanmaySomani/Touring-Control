@@ -14,7 +14,7 @@ VIEWS = ["Overview", "Flight inventory", "Demand forecast", "Scenario planner", 
 st.html("""
 <style>
 .stApp {background:#f5f7fa}
-.block-container {padding-top:2rem;padding-bottom:2rem;max-width:1500px}
+.block-container,[data-testid="stMainBlockContainer"] {padding:2rem;max-width:1500px}
 h1,h2,h3 {letter-spacing:-.04em}
 h1 {font-size:2.25rem!important;font-weight:750!important}
 h2 {font-size:1.35rem!important}
@@ -25,6 +25,7 @@ h3 {font-size:1.25rem!important}
 [data-testid="stSidebar"] [data-testid="stWidgetLabel"] {color:white!important}
 [data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {color:#ffe2e4!important}
 [data-testid="stSidebar"] [data-baseweb="select"] {color:#253746}
+[data-testid="stSidebar"] [data-testid="stLinkButton"] p {color:#253746!important}
 [data-testid="stSidebar"] [data-testid="stRadio"] label {padding:.45rem .6rem;border-radius:7px;margin:2px 0}
 [data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) {background:#9e1016}
 [data-testid="stMetric"] {background:white;border:1px solid #e3e8ef;border-radius:12px;padding:18px 20px;min-height:132px}
@@ -41,9 +42,13 @@ h3 {font-size:1.25rem!important}
 .sidebar-brand span {display:block;font-weight:400;color:#ffe2e4}
 .sidebar-note {color:white;font-size:1.25rem;line-height:1.6;margin:30px 0 15px}
 .evidence {background:#fff0f1;border:1px solid #f3d1d5;padding:14px 18px;border-radius:9px;color:#9f1820;margin-bottom:22px}
-@media(max-width:640px){h1{font-size:1.8rem!important}.block-container{padding:1.25rem 1rem}
+@media(max-width:1100px){
 [data-testid="stHorizontalBlock"]{flex-wrap:wrap}
-[data-testid="stHorizontalBlock"]>[data-testid="stColumn"]{min-width:100%!important}
+[data-testid="stHorizontalBlock"]>[data-testid="stColumn"]{min-width:100%!important;flex:1 1 100%!important}
+.st-key-top_metrics [data-testid="stColumn"]{min-width:calc(50% - .75rem)!important;flex:1 1 calc(50% - .75rem)!important}}
+@media(max-width:640px){h1{font-size:1.8rem!important}.block-container,[data-testid="stMainBlockContainer"]{padding:1.25rem 1rem}
+[data-testid="stHorizontalBlock"]{flex-wrap:wrap}
+[data-testid="stHorizontalBlock"]>[data-testid="stColumn"],.st-key-top_metrics [data-testid="stColumn"]{min-width:100%!important;flex:1 1 100%!important}
 [data-testid="stMetric"]{min-height:112px}}
 </style>
 """)
@@ -60,6 +65,11 @@ def cash(value, compact=False):
     if compact and abs(value) >= 1000:
         return f"${value / 1000:,.1f}K"
     return f"${value:,.0f}"
+
+
+def metric_columns():
+    with st.container(key="top_metrics"):
+        return st.columns(4)
 
 
 def chart(fig, key):
@@ -119,7 +129,7 @@ if not contracts:
 
 
 if view == "Overview":
-    metrics = st.columns(4)
+    metrics = metric_columns()
     metrics[0].metric("Contracted seats", f"{totals['seats']:,}", help=f"{len(contracts)} simulated upcoming departures")
     metrics[1].metric("Booked utilisation", f"{totals['utilisation']:.1f}%", help="Total booked passengers ÷ total contracted seats")
     metrics[2].metric("Unbooked commitment", cash(totals["exposure"], True), help="Gross cost of unsold seats; not a realised loss")
@@ -209,7 +219,7 @@ elif view == "Demand forecast":
     backtests = pd.DataFrame(data["backtests"]).query("route in @active")
     holdout = backtests[backtests["split"] == "holdout"]
     wape = holdout["absoluteError"].sum() / holdout["actual"].sum() * 100
-    metrics = st.columns(4)
+    metrics = metric_columns()
     for col, label, value in zip(metrics, ["Holdout forecast error", "Real route observations", "Forecast horizon", "Selected model"], [f"{wape:.1f}% WAPE", str(len(market)), "12 months", "Seasonal"]):
         col.metric(label, value)
     with st.container(border=True):
@@ -272,7 +282,7 @@ elif view == "Scenario planner":
 
 elif view == "Data quality":
     quality = data["quality"]
-    metrics = st.columns(4)
+    metrics = metric_columns()
     for col, label, value in zip(metrics, ["Raw booking records", "Accepted booking records", "Quarantined exceptions", "Real market observations"], [quality["rawRecords"], quality["acceptedRecords"], len(quality["quarantined"]), quality["marketRows"]]):
         col.metric(label, value)
     st.caption("Pipeline controls apply to the complete source dataset; portfolio filters apply to commercial views.")

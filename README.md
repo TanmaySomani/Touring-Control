@@ -1,5 +1,7 @@
 # Touring Control
 
+**[Open the live interactive dashboard](https://touring-control-tanmaysomani.streamlit.app/)** · [GitHub source](https://github.com/TanmaySomani/Touring-Control) · [Business case](docs/case-study.md)
+
 A commercial flight-inventory decision-support project built for an Inventory Coordinator application. It combines official Australian aviation statistics with an explicitly simulated touring operation.
 
 **Business question:** Which contracted seats should a touring operator retain, release or escalate before supplier deadlines, and what is the commercial effect?
