@@ -42,6 +42,11 @@ h3 {font-size:1.25rem!important}
 .sidebar-brand span {display:block;font-weight:400;color:#ffe2e4}
 .sidebar-note {color:white;font-size:1.25rem;line-height:1.6;margin:30px 0 15px}
 .evidence {background:#fff0f1;border:1px solid #f3d1d5;padding:14px 18px;border-radius:9px;color:#9f1820;margin-bottom:22px}
+.project-brief {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin:6px 0 20px}
+.project-brief article {background:white;border:1px solid #e3e8ef;border-top:3px solid #d71920;border-radius:10px;padding:18px 20px}
+.project-brief h2 {font-size:1.05rem!important;letter-spacing:-.02em;margin:0 0 8px;color:#253746}
+.project-brief p {font-size:.9rem;line-height:1.6;color:#536979;margin:0}
+.project-decision {grid-column:1/-1;color:#9f1820;font-size:.9rem;line-height:1.6;background:#fff0f1;border-radius:8px;padding:12px 18px}
 @media(max-width:1100px){
 [data-testid="stHorizontalBlock"]{flex-wrap:wrap}
 [data-testid="stHorizontalBlock"]>[data-testid="stColumn"]{min-width:100%!important;flex:1 1 100%!important}
@@ -100,6 +105,27 @@ def csv_download(frame, label, filename, key):
     st.download_button(label, frame.to_csv(index=False).encode("utf-8"), filename, "text/csv", key=key, width="stretch")
 
 
+def project_brief():
+    st.html("""
+    <section class="project-brief" aria-label="Project problem and solution">
+      <article>
+        <h2>Problem statement</h2>
+        <p>Flight-inclusive tours commit airline seats before customer demand is certain.
+        Unsold seats can become a cost if supplier release deadlines are missed;
+        releasing too early can leave a successful tour short of capacity.</p>
+      </article>
+      <article>
+        <h2>What this dashboard solves</h2>
+        <p>Touring Control brings bookings, contracted seats, deadlines and forecasts into one view.
+        Identify departures at risk, test demand scenarios and compare the commercial trade-off
+        before a Product Manager decides what to retain, release or escalate.</p>
+      </article>
+      <div class="project-decision"><strong>The decision:</strong> Which seats should we keep,
+      release or escalate before the supplier deadline?</div>
+    </section>
+    """)
+
+
 data = get_data()
 as_of = data["asOf"]
 with st.sidebar:
@@ -123,6 +149,8 @@ st.html('<div class="eyebrow">MY TOURING CASE STUDY · COMMERCIAL INTELLIGENCE</
 st.title("Every seat. A smarter decision." if view == "Overview" else view)
 st.html('<p class="subtitle">Stay ahead of demand, supplier release deadlines and commercial exposure.</p>')
 st.caption("Real BITRE market statistics · Simulated contracts and commercial results · AUD · Fixed October 2026 snapshot")
+if view in ["Overview", "Project & methodology"]:
+    project_brief()
 if not contracts:
     st.info("No departures match these filters. Choose another region, departure city or horizon in the sidebar.")
     st.stop()
@@ -301,9 +329,19 @@ elif view == "Data quality":
     st.caption("SHA-256 of the pinned original XLSX. No personal customer data is included.")
 
 elif view == "Project & methodology":
-    st.html('<div class="callout"><div class="eyebrow">THE COMMERCIAL PROBLEM</div><h3>Committed seats can outlast demand.</h3><p>A flight-inclusive touring operator commits to seat blocks before demand is fully known. Releasing too late creates cost exposure; releasing too early can constrain sales. Touring Control brings deadlines, booking pace and forecast uncertainty into one review workflow.</p></div>')
     solution, methodology, report = st.tabs(["Solution & workflow", "Calculations & assumptions", "Full report"])
     with solution:
+        st.subheader("From business problem to practical solution")
+        st.write("When supplier contracts, booking records and sales reports sit in separate systems, teams can struggle to see exposure in time. This case study models a shared review workflow for an Inventory Coordinator working with Product, Commercial, Sales, Finance and Operations.")
+        table(pd.DataFrame([
+            {"Business problem": "Fragmented inventory and booking records", "Dashboard solution": "Reconciled contract register, filters and data-quality controls", "Intended outcome": "A consistent passenger and seat position"},
+            {"Business problem": "Weak bookings near a supplier release deadline", "Dashboard solution": "Utilisation, gross unbooked commitment and deadline alerts", "Intended outcome": "Earlier review of avoidable cost exposure"},
+            {"Business problem": "Uncertain demand and seasonal booking patterns", "Dashboard solution": "Market forecast validation and illustrative tour booking curves", "Intended outcome": "Better-informed capacity planning"},
+            {"Business problem": "Releasing too many or too few seats", "Dashboard solution": "Demand scenarios with booking protection, buffers and contract limits", "Intended outcome": "Compare capacity needs with contribution trade-offs"},
+            {"Business problem": "Inconsistent reporting across stakeholder teams", "Dashboard solution": "Budget and prior-year comparisons, CSV exports and an Excel pack", "Intended outcome": "A shared, reviewable basis for commercial decisions"},
+        ]))
+        st.caption("These are the project's intended benefits. It uses simulated commercial records and does not demonstrate realised savings or diagnose Flight Centre's internal operations.")
+        st.subheader("How a coordinator uses it")
         st.markdown("1. Reconcile contracted inventory and bookings.\n2. Monitor utilisation, release deadlines, budget and comparable prior-year performance.\n3. Inspect real market seasonality and forecast validation.\n4. Test demand and capacity scenarios within contract constraints.\n5. Export decisions for Product, Commercial, Sales, Finance and Operations review.")
         st.write("**Scope:** Six city pairs, 252 official market observations, 48 simulated commitments, 1,632 seats and 748 accepted bookings.")
         st.info("A production pilot would require actual supplier terms, historical booking snapshots, cancellations, capacity bottlenecks, refresh monitoring, role-based approvals and a durable audit trail.")
