@@ -14,7 +14,27 @@ A commercial flight-inventory decision-support project built for an Inventory Co
 - Formula-driven Excel reporting, filterable tables, CSV exports and SQLite commercial queries.
 - Data-quality exceptions, grain checks, transaction-to-contract reconciliation and source provenance.
 
-## Run the dashboard
+## Run the Streamlit dashboard
+
+Python 3.12 is used for Streamlit Community Cloud. The public app runs from `streamlit_app.py` on the `main` branch.
+
+```sh
+python3 -m venv .streamlit-venv
+.streamlit-venv/bin/python -m pip install -r requirements.txt
+.streamlit-venv/bin/python -m streamlit run streamlit_app.py
+```
+
+The Streamlit version includes the same six analytical views, red theme, portfolio filters, inventory search, contract detail, market forecasts, scenario sliders, data controls and evidence downloads. Each visitor gets independent session controls; the app never changes airline inventory. Its Python commercial model is checked against the original TypeScript calculations across 864 contract/scenario combinations. Six tests also cover supplier deadline protection, retained capacity, weighted metrics, all six views and interactive demand/strategy changes.
+
+```sh
+.streamlit-venv/bin/python -m unittest tests/test_streamlit.py -v
+```
+
+This test command needs Node.js and the existing npm dependencies for the TypeScript parity check. Running the Streamlit app itself needs only the Python packages in `requirements.txt`.
+
+[GitHub source](https://github.com/TanmaySomani/Touring-Control) · [Resume project wording](docs/resume-project.md)
+
+## Run the React dashboard
 
 Requirements: Node.js 22.13 or later and npm.
 

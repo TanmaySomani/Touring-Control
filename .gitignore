@@ -45,6 +45,8 @@ next-env.d.ts
 /outputs/
 /work/
 /.venv/
+/.streamlit-venv/
+/.streamlit/secrets.toml
 /.artifact-build/node_modules
 *.tsbuildinfo
 **/__pycache__/
